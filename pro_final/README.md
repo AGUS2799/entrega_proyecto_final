@@ -10,7 +10,9 @@ esta el template
 
 ```
 ```bash
-Otra cosa que no pude hacer es lo de "unit test" en la app de series en test.py hay un intento, otra cosa que quise hacer es usar pytest lo cual me estaba tomando tiempo y no terminaba de entenderlo 
+Otra cosa que no pude hacer es lo de "unit test" en la app de series en test.py hay un intento,
+ otra cosa que quise hacer es usar pytest lo cual me estaba tomando tiempo 
+ y no terminaba de entenderlo 
 ```
 
 
@@ -25,13 +27,12 @@ https://drive.google.com/file/d/1bMvNSVlAI6glU1Ob29gCmYSzvMG6Et6r/view?usp=shari
 - Clonar el proyecto y cambiar de rama
 ```bash
 git clone https://github.com/AGUS2799/entrega_proyecto_final.git
+cd entrega_proyecto_final
 cd pro_final
 ```
 
 - Crear base de datos a partir de las migraciones
 ```bash
-python manage.py makemigrations
-
 python manage.py migrate
 ```
 
