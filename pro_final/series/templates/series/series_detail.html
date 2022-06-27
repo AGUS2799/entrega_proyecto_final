@@ -1,0 +1,21 @@
+{% extends "home/index.html" %}
+{% load static %}
+
+{% block changingContent %}
+
+<h2>Detalles de la Serie</h2>
+<hr></hr>
+<p><h3>Nombre: {{ series.name }}</h3></p>
+<p><h3>fecha de estreno: {{ series.release_date }}</h3></p>
+<p><h3>Nombre del director: {{ series.director_name }}</h3></p>
+<h4>Descripción:</h4>
+<p><textarea readonly rows="7" cols="90" >{{ series.description }}</textarea></p>
+<p><a class="btn btn-primary" href="{% url 'series:add-comment' series.id %}">Comentar</a></p>
+<div>
+    <div>
+        <h3>Comentarios</h3>
+    </div>
+</div>
+<p><a class="btn btn-primary" href="{% url 'series:series-list' %}">Regresar a la lista de series</a></p>
+
+{% endblock %}

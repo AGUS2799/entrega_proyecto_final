@@ -1,0 +1,11 @@
+.env
+env/*
+*.log
+*.pot
+*.pyc
+*/__pycache__/
+x_*
+db.sqlite3
+static/*
+staticfiles/*
+media/*

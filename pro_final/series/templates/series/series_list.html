@@ -1,0 +1,48 @@
+{% extends "home/index.html" %}
+{% load static %}
+
+{% block changingContent %}
+<h1>Series</h1>
+{% if user.is_superuser %}
+<a class="btn btn-primary text-uppercase" href="{% url 'series:series-add' %}">Agregar Serie</a>
+{% endif %}
+<hr></hr>
+<form action="{% url 'series:search' %}" method="POST">
+    <div>
+        {% csrf_token %}
+        <input type="search" name="searched" placeholder="Buscar Peiculas">
+        <button type="submit">Buscar</button>
+        <a style="color: blue" href="{% url 'series:series-list' %}"><i class="fa fa-undo"></i></a>
+    </div>
+
+</form>
+
+<ul>
+    {% if series_list %}
+    {% for series in series_list %}
+    <li>
+        {{series.name}}
+        (
+            <a href="{% url 'series:series-detail' series.id %}">
+                <i class="fa fa-eye" style="color: rgb(0, 0, 255);"> </i>
+            </a>
+        
+        |
+        {% if user.is_superuser %}
+        <a href="{% url 'series:series-update' series.id %}">
+            <i class="fa fa-pencil" style="color: rgb(0, 0, 190);"> </i>
+        </a>
+        |
+        <a href="{% url 'series:series-delete' series.id %}">
+            <i class="fa fa-trash" style="color: rgb(214, 6, 6);"> </i>
+        </a>
+        {% endif %}
+        )
+    </li>
+    {% endfor %}
+    {% else %}
+        <p>No hay niguna Serie cargada</p>
+    {% endif %}
+</ul>
+
+{% endblock %}

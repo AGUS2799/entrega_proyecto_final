@@ -1,0 +1,21 @@
+{% extends "home/index.html" %}
+{% load static %}
+
+{% block changingContent %}
+
+<h2>Detalle de la Pelicula</h2>
+<hr></hr>
+<p><h3>Nombre: {{ movies.name }}</h3></p>
+<p><h3>fecha de estreno: {{ movies.release_date }}</h3></p>
+<p><h3>Nombre del director: {{ movies.director_name }}</h3></p>
+<h4>Descripción:</h4>
+<p><textarea readonly rows="7" cols="90" >{{ movies.description }}</textarea></p>
+<p><a class="btn btn-primary" href="{% url 'movies:add-comment' movies.id %}">Comentar</a></p>
+<div>
+    <div>
+        <h3>Comentarios</h3>
+    </div>
+</div>
+<p><a class="btn btn-primary" href="{% url 'movies:movies-list' %}">Regresar a la lista de peliculas</a></p>
+
+{% endblock %}

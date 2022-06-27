@@ -1,0 +1,16 @@
+{% extends "home/index.html" %}
+{% load static %}
+
+{% block changingContent %}
+<div>
+    <h1>Perfil</h1>
+    <hr></hr>
+        <img height="160px" src="{{url}}" alt="">
+        <h5><a style="color: rgb(3, 36, 184)" href="{% url 'user:avatar-load' %}">Cambiar Avatar</a></h5>
+        <p><h3>Nombre de usuario: {{ user.username }}</h3></p>
+        <p><h3>Nombre: {{ user.first_name }}</h3></p>
+        <p><h3>Apellido: {{ user.last_name }}</h3></p>
+        <p><h3>Email: {{ user.email }}</h3></p>
+        <a class="btn btn-secondary" href="{% url 'user:user-update' %}">Editar usuario</a>
+</div>
+{% endblock %}

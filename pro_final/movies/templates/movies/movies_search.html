@@ -1,0 +1,36 @@
+{% extends "home/index.html" %}
+{% load static %}
+
+{% block changingContent %}
+    <div>
+        {% if searched %}
+            <h1>Estos son los resultados de "{{ searched }}"</h1>
+            <br><br>
+            <ul>
+                {% for movie in movies %}
+                <li>
+                    {{movie.name}}
+                    (
+                        <a href="{% url 'movies:movies-detail' movie.id %}">
+                            <i class="fa fa-eye" style="color: rgb(0, 0, 255);"> </i>
+                        </a>
+                {% if user.is_superuser %}
+                |
+                <a href="{% url 'movies:movies-update' movie.id %}">
+                    <i class="fa fa-pencil" style="color: rgb(0, 0, 190);"> </i>
+                </a>
+                |
+                <a href="{% url 'movies:movies-delete' movie.id %}">
+                    <i class="fa fa-trash" style="color: rgb(214, 6, 6);"> </i>
+                </a>
+                {% endif %}
+                )
+                </li>
+                {% endfor %}
+            </ul>
+            <p class="btn btn-secondary"><a href="{% url 'movies:movies-list'%}">Regresar..</a></p>
+        {% else %}
+            <h1>No buscaste nada</h1>
+        {% endif %}
+    </div>
+{% endblock %}

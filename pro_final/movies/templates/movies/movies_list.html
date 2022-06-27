@@ -1,0 +1,47 @@
+{% extends "home/index.html" %}
+{% load static %}
+
+{% block changingContent %}
+<h1>Peiculas</h1>
+{% if user.is_superuser %}
+<a class="btn btn-primary text-uppercase" href="{% url 'movies:movies-add' %}">Agregar Pelicula</a>
+{% endif %}
+<hr></hr>
+<form action="{% url 'movies:search' %}" method="POST">
+    <div>
+        {% csrf_token %}
+        <input type="search" name="searched" placeholder="Buscar Peiculas">
+        <button type="submit">Buscar</button>
+        <a style="color: blue" href="{% url 'movies:movies-list' %}"><i class="fa fa-undo"></i></a>
+    </div>
+
+</form>
+
+<ul>
+    {% if movies_list %}
+    {% for movies in movies_list %}
+    <li>
+        {{movies.name}}
+        (
+            <a href="{% url 'movies:movies-detail' movies.id %}">
+                <i class="fa fa-eye" style="color: rgb(0, 0, 255);"> </i>
+            </a>
+        {% if user.is_superuser %}
+        |
+        <a href="{% url 'movies:movies-update' movies.id %}">
+            <i class="fa fa-pencil" style="color: rgb(0, 0, 190);"> </i>
+        </a>
+        |
+        <a href="{% url 'movies:movies-delete' movies.id %}">
+            <i class="fa fa-trash" style="color: rgb(214, 6, 6);"> </i>
+        </a>
+        {% endif %}
+        )
+    </li>
+    {% endfor %}
+    {% else %}
+        <p>No hay niguna pelicula cargada</p>
+    {% endif %}
+</ul>
+
+{% endblock %}

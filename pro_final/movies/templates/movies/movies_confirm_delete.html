@@ -1,0 +1,17 @@
+{% extends "home/index.html" %}
+{% load static %}
+
+{% block changingContent %}
+
+<h2>Eliminar Pelicula</h2>
+<hr></hr>
+
+<p>Estás seguro de eliminar el Pelicula: {{ movies.name }}?</p>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input class="btn btn-primary text-uppercase" type="submit" value="Si, eliminar.">
+    <a class="btn btn-primary text-uppercase" href="{% url 'movies:movies-list' %}" >Cancelar</a>
+</form>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "home/index.html" %}
+{% load static %}
+
+{% block changingContent %}
+<h1>Agregar comantario</h1>
+<br><br>
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-primary" value="Comentar" />
+    </form>
+</div>
+{% endblock %}

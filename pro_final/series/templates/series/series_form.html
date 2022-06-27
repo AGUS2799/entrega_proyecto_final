@@ -1,0 +1,13 @@
+{% extends "home/index.html" %}
+{% load static %}
+
+{% block changingContent %}
+<h2>Formulario para guardar/editar Serie</h2>
+<hr></hr>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-primary" value="Guardar Serie" />
+</form>
+{% endblock %}
