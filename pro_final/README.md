@@ -1,6 +1,6 @@
 # Agustin Peña
 
-- El proyecto lo hice solo, no por desicion mia, en la entrega figuraba yo solo
+- El proyecto lo hice solo, no por decision mia, en la entrega figuraba yo solo
 
 -Respecto al proyecto
 ```bash
