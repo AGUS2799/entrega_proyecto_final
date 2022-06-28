@@ -10,9 +10,7 @@ esta el template
 
 ```
 ```bash
-Otra cosa que no pude hacer es lo de "unit test" en la app de series en test.py hay un intento,
- otra cosa que quise hacer es usar pytest lo cual me estaba tomando tiempo 
- y no terminaba de entenderlo 
+Los "unit test" estan creados en las apps movies y series, en el archivo "test.py"
 ```
 
 
