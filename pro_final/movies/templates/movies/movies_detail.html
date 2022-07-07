@@ -15,6 +15,16 @@
     <div>
         <h3>Comentarios</h3>
     </div>
+    {% if not movies.comments.all %}
+            Ningun comentario aun...
+    {% else %}
+            {% for coment in movies.comments.all %}
+                <br>
+                <p><h4>{{coment.body}}</h4></p>
+                <h5>{{coment.name}} / {{coment.created_on}}</h5>
+                <hr>
+            {% endfor %}
+        {% endif %}
 </div>
 <p><a class="btn btn-primary" href="{% url 'movies:movies-list' %}">Regresar a la lista de peliculas</a></p>
 

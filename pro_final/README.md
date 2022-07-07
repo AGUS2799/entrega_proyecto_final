@@ -10,7 +10,7 @@ esta el template
 
 ```
 ```bash
-Los "unit test" estan creados en las apps movies y series, en el archivo "test.py"
+Los "unit test" estan creados en las apps movies y series, en el archivo "tests.py"
 ```
 
 

@@ -68,3 +68,7 @@ class AddCommentView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('movies:movies-list')
 
 
+    def form_valid(self, form):
+        form.instance.post_id = self.kwargs['pk']
+        return super().form_valid(form)
+
