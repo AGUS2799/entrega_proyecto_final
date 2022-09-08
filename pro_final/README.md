@@ -4,9 +4,7 @@
 
 -Respecto al proyecto
 ```bash
-tuve problemas al realizar lo de los comentarios en los post, esa parte del proyecto no se encuentra funcionando
-y otra cosa que no logre es en la parte de edicion de usuario no funciona el cambio de contraseña, en el codigo
-esta el template
+Ya esta solucionado lo de los comentarios
 
 ```
 ```bash
